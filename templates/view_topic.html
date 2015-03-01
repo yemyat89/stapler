@@ -1,0 +1,23 @@
+{{ topic.name }}, {{ topic.desc }}
+
+<div style="width:500px;border:solid thin;margin:5px;padding:5px;">
+    <h3>Add a URL</h1>
+    <form action="{{ url_for('add_url') }}" method="POST">
+        <input name="tid" type="hidden" value="{{ topic.tid }}"/>
+        URL: <input name="url" type="text" />
+        <input type="submit" value="Add" />
+    </form>
+</div>
+
+
+<div>
+    <h3>Links</h1>
+    <button>Sort</button>
+    <hr/>
+    {% for link in links %}
+        <div>
+            <a href="{{ link.url }}">{{ link.url }}</a>
+        </div>
+    {% endfor %}
+
+</div>

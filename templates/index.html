@@ -1,0 +1,13 @@
+<h1>Welcome</h1>
+
+<a href="{{url_for('create_topic')}}">Create a New Topic</a>
+
+<h1>Created Topics</h1>
+<div>
+    {% for topic in topics %}
+        <div>
+            {{ topic.name }}, {{ topic.desc }} 
+            <a href="{{ url_for('view_topic', tid=topic.tid) }}">See More</a>
+        </div> 
+    {% endfor %}
+</div>
