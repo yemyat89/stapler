@@ -4,3 +4,4 @@ MarkupSafe==0.18
 Werkzeug==0.9.4
 sqlalchemy==0.8.2
 Flask-SQLAlchemy==2.0
+psycopg2
