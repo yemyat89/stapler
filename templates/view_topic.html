@@ -5,18 +5,22 @@
     <form action="{{ url_for('add_url') }}" method="POST">
         <input name="tid" type="hidden" value="{{ topic.tid }}"/>
         URL: <input name="url" type="text" />
+        <div>
+            Month: <input type="text" name="month" style="width:50px;" /> 
+            Year: <input type="text" name="year" style="width:100px;" />
+        </div>
         <input type="submit" value="Add" />
     </form>
 </div>
 
+<br/>
 
 <div>
-    <h3>Links</h1>
-    <button>Sort</button>
     <hr/>
+    <h3>Links</h1>
     {% for link in links %}
         <div>
-            <a href="{{ link.url }}">{{ link.url }}</a>
+            <a href="{{ link.url }}">{{ link.title }}</a> ({{ link.timestamp.strftime('%b-%Y') }})
         </div>
     {% endfor %}
 

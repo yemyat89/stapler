@@ -27,8 +27,12 @@ class Link(db.Model):
     lid = db.Column(db.Integer, primary_key=True)
     fk_tid = db.Column(db.Integer)
     url = db.Column(db.String(300), unique=True)
-    def __init__(self, fk_tid,  url):
+    title = db.Column(db.String(300), unique=True)
+    timestamp = db.Column(db.DateTime)
+    def __init__(self, fk_tid,  url, title, timestamp):
         self.fk_tid = fk_tid
         self.url = url
+        self.title = title
+        self.timestamp = timestamp
 
 
